@@ -64,6 +64,25 @@ void LinkedList::insertionSortOnDefense()
     }
 }
 
+void LinkedList::insertionSort(int arr[]
+{
+    int curr;
+    int length = sizeof(arr);
+    int follower;
+    for (int i = 1; i < n; i++)
+    {
+        curr = arr[i];
+        follower = i - 1;
+        while (follower >= 0 && arr[follower] > curr)
+        {
+            arr[follower + 1] = arr[follower];
+            follower = follower - 1;
+        }
+        arr[follower + 1] = curr;
+    }
+    return arr;
+}
+
 void LinkedList::addEnd(Card* c)
 {
     Node* n = new Node(c);
